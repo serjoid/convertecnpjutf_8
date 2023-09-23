@@ -1,0 +1,62 @@
+CREATE TABLE empresas (
+cnpj_basico VARCHAR(10),
+razao_social VARCHAR(255),
+natureza_juridica VARCHAR(255),
+qualificacao_responsavel VARCHAR(255),
+capital_social VARCHAR(255),
+porte_empresa VARCHAR(255),
+ente_responsavel VARCHAR(255)
+);
+
+create table estabelecimentos(
+cnpj_basico varchar(10),
+cnpj_ordem varchar(10),
+cnpj_dv varchar(10),
+matriz_filial varchar(10),
+nome_fantasia varchar(255),
+situacao_cadastral varchar(10),
+data_situacao varchar(255),
+motivo_situacao varchar(10),
+cidade_ext varchar(255),
+pais varchar(255),
+data_inicio varchar(255),
+cnae_principal varchar(255),
+cnae_secundario varchar(1000),
+tipo_logradouro varchar(20),
+logradouro varchar(255),
+numero varchar(20),
+complemento varchar(255),
+bairro varchar(255),
+cep varchar(10),
+uf varchar(2),
+municipio varchar(255),
+ddd_1 varchar(10),
+telefone_1 varchar(10),
+ddd_2 varchar(10),
+telefone_2 varchar(10),
+ddd_fax varchar(10),
+tel_fax varchar(10),
+email varchar(255),
+situacao_especial varchar(100),
+data_sit_especial varchar(10)
+);
+
+create table cnaes(
+codigo varchar(20),
+atividade varchar(255)
+);
+
+create table municipios(
+codigo varchar(20),
+nome_municipio varchar(255)
+);
+
+
+COPY empresas FROM 'E:\CNPJ\K3241.K03200Y9.D30909.EMPRECSV' DELIMITER ',' CSV HEADER;
+COPY estabelecimentos FROM 'E:\CNPJ\K3241.K03200Y9.D30909.ESTABELE' DELIMITER ',' CSV HEADER;
+COPY cnaes FROM 'E:\CNPJ\F.K03200$Z.D30909.CNAECSV' DELIMITER ',' CSV HEADER;
+COPY municipios FROM 'E:\CNPJ\F.K03200$Z.D30909.MUNICCSV' DELIMITER ',' CSV HEADER;
+
+
+select * from estabelecimentos 
+
